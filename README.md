@@ -1,6 +1,8 @@
 # Competitve Tetris
 
-We added a new twist to the orginal game of tetris! 
+We added a new twist to the orginal game of tetris! <br>
+We coded this using React and Javascript. <br>
+
 You can access the game here : 
 http://localhost:3000
 or 
