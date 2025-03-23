@@ -20,7 +20,7 @@ const MultiplayerTetris = () => {
     rotate: 87,  // 'W'
   };
 
-  const controlsPlayer2 = {
+  const controlsPlayer1 = {
     // left: 65,    // 'A'
     // right: 68,   // 'D'
     // down: 83,    // 'S'
