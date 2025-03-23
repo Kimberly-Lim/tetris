@@ -9,33 +9,18 @@ const MultiplayerWrapper = styled.div`
 `;
 
 const MultiplayerTetris = () => {
-  
-
   const controlsPlayer1 = {
-    // left: 65,    // 'A'
-    // right: 68,   // 'D'
-    // down: 83,    // 'S'
-    // rotate: 87,  // 'W'
-
     left: 65,    // 'A'
     right: 68,   // 'D'
     down: 83,    // 'S'
     rotate: 87,  // 'W'
-    // left: 37,    // Arrow Left
-    // right: 39,   // Arrow Right
-    // down: 40,    // Arrow Down
-    // rotate: 38,  // Arrow Up
   };
 
   const controlsPlayer2 = {
-    // left: 65,    // 'A'
-    // right: 68,   // 'D'
-    // down: 83,    // 'S'
-    // rotate: 87,  // 'W'
-    left: 37,
-    right: 68,
-    down: 83,
-    rotate: 87,
+    left: 37,    // Arrow Left
+    right: 39,   // Arrow Right
+    down: 40,    // Arrow Down
+    rotate: 38,  // Arrow Up
   };
 
   useEffect(() => {
@@ -54,7 +39,7 @@ const MultiplayerTetris = () => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [controlsPlayer1, controlsPlayer2]);  // Empty dependency array means the effect runs only on mount and unmount
+  }, []);  // Empty dependency array means the effect runs only on mount and unmount
 
   return (
     <MultiplayerWrapper>
