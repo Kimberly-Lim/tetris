@@ -12,21 +12,25 @@ const MultiplayerTetris = () => {
   
 
   const controlsPlayer1 = {
-    // left: 65,    // 'A'
-    // right: 68,   // 'D'
-    // down: 83,    // 'S'
-    // rotate: 87,  // 'W'
-    left: 37,    // Arrow Left
-    right: 39,   // Arrow Right
-    down: 40,    // Arrow Down
-    rotate: 38,  // Arrow Up
-  };
-
-  const controlsPlayer2 = {
     left: 65,    // 'A'
     right: 68,   // 'D'
     down: 83,    // 'S'
     rotate: 87,  // 'W'
+    // left: 37,    // Arrow Left
+    // right: 39,   // Arrow Right
+    // down: 40,    // Arrow Down
+    // rotate: 38,  // Arrow Up
+  };
+
+  const controlsPlayer2 = {
+    // left: 65,    // 'A'
+    // right: 68,   // 'D'
+    // down: 83,    // 'S'
+    // rotate: 87,  // 'W'
+    left: 37,
+    right: 68,
+    down: 83,
+    rotate: 87,
   };
 
   useEffect(() => {
