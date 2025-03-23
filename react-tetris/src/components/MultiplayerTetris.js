@@ -29,6 +29,24 @@ const MultiplayerTetris = () => {
     rotate: 87,  // 'W'
   };
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      // Collect all game control keys into an array
+      const gameKeys = [...Object.values(controlsPlayer1), ...Object.values(controlsPlayer2)];
+      if (gameKeys.includes(event.keyCode)) {
+        event.preventDefault();  // Prevent the default action for game control keys
+      }
+    };
+
+    // Add event listener
+    window.addEventListener('keydown', handleKeyDown);
+
+    // Cleanup the event listener
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [controlsPlayer1, controlsPlayer2]);  // Empty dependency array means the effect runs only on mount and unmount
+
   return (
     <MultiplayerWrapper>
       <TetrisInstance controls={controlsPlayer1} playerNumber={1} />
