@@ -23,11 +23,633 @@
         "placeholder": "New STRIDE diagram description",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
         "version": "2.5.0",
-        "cells": []
+        "cells": [
+          {
+            "position": {
+              "x": 187.99999999999943,
+              "y": 60.000000000000796
+            },
+            "size": {
+              "width": 270,
+              "height": 370
+            },
+            "attrs": {
+              "label": {
+                "text": "Internet"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "928543fe-d139-45b9-88ea-9f79a099551c",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Internet",
+              "description": "Public Internet\n",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 472,
+              "y": 60.000000000000796
+            },
+            "size": {
+              "width": 240,
+              "height": 230
+            },
+            "attrs": {
+              "label": {
+                "text": "Cloud"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "cb646543-c23f-4539-a6c1-ce01db2f2cdf",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Cloud",
+              "description": "Tetris Private cloud ",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 223.75,
+              "y": 337
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Admin/Player"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "a6513d0c-97e0-4934-9b9c-55f9c8c4965c"
+                },
+                {
+                  "group": "right",
+                  "id": "6d082b47-6f32-446b-9dad-b62e5c216633"
+                },
+                {
+                  "group": "bottom",
+                  "id": "cca37f19-b5fa-475e-afc9-1f688bb94178"
+                },
+                {
+                  "group": "left",
+                  "id": "433ab427-0c90-430e-a224-f65e0f5ca54c"
+                }
+              ]
+            },
+            "id": "dd4d4cfd-7187-407d-bffa-8dd97a122991",
+            "zIndex": 0,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Admin/Player",
+              "description": "A user that access the web app to play or a web developer that access games to update/modify code for game.",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "providesAuthentication": true,
+              "threats": [
+                {
+                  "id": "832d5943-5b52-40d0-9a21-226d60153306",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "User/Player could login as other players using their account as attacker's own. Attacker pretends to be another user to gain control of their account by using sql injection, escalate privilege, ect, hijack session, steal token, steal credentials.",
+                  "mitigation": "encrypt connection, sanitize input, validate input, enforce auth with json token or local credentials/AD. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": ""
+                },
+                {
+                  "id": "841fca3c-e859-418e-815b-65bc923c7e86",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "user has ability to deny malicious actions or any action due to lack of auditing or logging.",
+                  "mitigation": "Implement logging and auditing. Assign unique token/opaque code to user logins to track actions of users. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "repudiation": 1
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 210,
+              "y": 109.99999999999994
+            },
+            "size": {
+              "width": 140,
+              "height": 110
+            },
+            "attrs": {
+              "text": {
+                "text": "Tetris web app\n"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "7494ab8a-b4d4-4be7-beb7-b9f12f3e660f"
+                },
+                {
+                  "group": "right",
+                  "id": "d1b7dfc5-46bd-42cf-922b-a26d62425bf3"
+                },
+                {
+                  "group": "bottom",
+                  "id": "6eac0abc-9442-4f74-b78f-c8f95f261779"
+                },
+                {
+                  "group": "left",
+                  "id": "c31717da-e983-4597-a6af-6721da18b8d5"
+                }
+              ]
+            },
+            "id": "ecf9cb6b-b42b-47c0-9626-2f7bec639dab",
+            "zIndex": 1,
+            "data": {
+              "type": "tm.Process",
+              "name": "Tetris web app\n",
+              "description": "Interactive two player Tetris game",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": true,
+              "privilegeLevel": "",
+              "threats": [
+                {
+                  "id": "6c015cb4-26fa-435f-8f04-114d33195a16",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Unauthorized access or modification of data or code. A malicious user gains unauthorized access to code/user data and steal/publishes private information or makes unauthorized modifications to code to alter game in his/her favor or crashes game, ect.",
+                  "mitigation": "Enforce MFA, or 2 factor MFA, follow least privilege principle, ect.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                },
+                {
+                  "id": "3520d568-cb81-4836-8d37-1b3894b7a9bf",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Disrupting access to systems or services",
+                  "mitigation": "Be prepared for flash crowds, have systems to detect this. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 0
+              }
+            },
+            "children": [
+              "3d478eb6-5741-453f-b230-c38fc53f5483"
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
+            }
+          },
+          {
+            "position": {
+              "x": 520,
+              "y": 120
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Credential/logs DB"
+              },
+              "topLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "f8792198-19b0-48e0-b7c5-3fd216cda337"
+                },
+                {
+                  "group": "right",
+                  "id": "047db59a-72d2-4818-83c5-b19b50611e6c"
+                },
+                {
+                  "group": "bottom",
+                  "id": "b800631a-bd19-4fa1-85c4-1f45a6405fbd"
+                },
+                {
+                  "group": "left",
+                  "id": "462c0a34-b01a-48cd-a105-d6f0e5d8e76f"
+                }
+              ]
+            },
+            "id": "8104c036-34af-4548-abf5-ef6a87947a12",
+            "zIndex": 2,
+            "data": {
+              "type": "tm.Store",
+              "name": "Credential/logs DB",
+              "description": "Local login credentials for players and developers. Store for logs as well. \n",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isALog": true,
+              "isEncrypted": true,
+              "isSigned": false,
+              "storesCredentials": true,
+              "storesInventory": false,
+              "threats": [
+                {
+                  "id": "5de76af2-32b3-4e22-b5cc-a389292176b5",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Exposing data to unauthorized people (data leak). ",
+                  "mitigation": "Encrypt data at rest/transit. Implement server and client-side validation, use JSON token, don't show info about DB in errors or errors at all.\n",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                },
+                {
+                  "id": "df8a680e-61be-48e9-a0c9-b7af691c00ed",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Unauthorized access or modification of data or code. A malicious user gains unauthorized access to code/user data and steal/publishes private information or makes unauthorized modifications to code to alter game in his/her favor or crashes game, ect.",
+                  "mitigation": "Enforce MFA, or 2 factor MFA, follow least privilege principle, ect.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Admin/Player login",
+              "description": "player accessing game through internet browser. Using user/pass as auth.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "HTTPS",
+              "threats": []
+            },
+            "labels": [
+              "Admin/Player login"
+            ],
+            "id": "6d0598ff-43e2-49b5-aefc-095f9a395179",
+            "source": {
+              "cell": "ecf9cb6b-b42b-47c0-9626-2f7bec639dab",
+              "port": "6eac0abc-9442-4f74-b78f-c8f95f261779"
+            },
+            "target": {
+              "cell": "dd4d4cfd-7187-407d-bffa-8dd97a122991",
+              "port": "a6513d0c-97e0-4934-9b9c-55f9c8c4965c"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Auth Credentials/log",
+              "description": "Authenticates user credentials and stores logs",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "HTTPS",
+              "threats": []
+            },
+            "labels": [
+              "Auth Credentials/log"
+            ],
+            "id": "1e9a77ae-81be-4c72-93a9-117b8b45838c",
+            "source": {
+              "cell": "8104c036-34af-4548-abf5-ef6a87947a12",
+              "port": "462c0a34-b01a-48cd-a105-d6f0e5d8e76f"
+            },
+            "target": {
+              "cell": "ecf9cb6b-b42b-47c0-9626-2f7bec639dab",
+              "port": "d1b7dfc5-46bd-42cf-922b-a26d62425bf3"
+            },
+            "vertices": [
+              {
+                "x": 410,
+                "y": 150
+              }
+            ]
+          }
+        ]
       }
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 8
   }
 }
