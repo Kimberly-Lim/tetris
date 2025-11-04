@@ -380,14 +380,7 @@
             },
             "children": [
               "3d478eb6-5741-453f-b230-c38fc53f5483"
-            ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
-            }
+            ]
           },
           {
             "position": {
