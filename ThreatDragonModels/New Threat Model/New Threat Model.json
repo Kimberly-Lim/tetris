@@ -40,8 +40,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "928543fe-d139-45b9-88ea-9f79a099551c",
             "zIndex": -1,
+            "id": "928543fe-d139-45b9-88ea-9f79a099551c",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Internet",
@@ -66,8 +66,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "cb646543-c23f-4539-a6c1-ce01db2f2cdf",
             "zIndex": -1,
+            "id": "cb646543-c23f-4539-a6c1-ce01db2f2cdf",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Cloud",
@@ -97,6 +97,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 0,
             "ports": {
               "groups": {
                 "top": {
@@ -180,7 +181,6 @@
               ]
             },
             "id": "dd4d4cfd-7187-407d-bffa-8dd97a122991",
-            "zIndex": 0,
             "data": {
               "type": "tm.Actor",
               "name": "Admin/Player",
@@ -245,6 +245,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -328,7 +329,6 @@
               ]
             },
             "id": "ecf9cb6b-b42b-47c0-9626-2f7bec639dab",
-            "zIndex": 1,
             "data": {
               "type": "tm.Process",
               "name": "Tetris web app\n",
@@ -408,6 +408,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -491,7 +492,6 @@
               ]
             },
             "id": "8104c036-34af-4548-abf5-ef6a87947a12",
-            "zIndex": 2,
             "data": {
               "type": "tm.Store",
               "name": "Credential/logs DB",
@@ -571,7 +571,26 @@
               "isEncrypted": true,
               "isPublicNetwork": true,
               "protocol": "HTTPS",
-              "threats": []
+              "threats": [
+                {
+                  "id": "ecd8da98-7a65-4f7d-98ae-b281dd494678",
+                  "title": "UI Rendering",
+                  "status": "Mitigated",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Older transport protocols are vulnerable and have known vulnerabilities. Transfer the current stage, score, and level state from game state hooks to the external entity (Screen/UI) for display.",
+                  "mitigation": "Use up to date cryptography and transport protocols",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Admin/Player login"
@@ -585,7 +604,12 @@
               "cell": "dd4d4cfd-7187-407d-bffa-8dd97a122991",
               "port": "a6513d0c-97e0-4934-9b9c-55f9c8c4965c"
             },
-            "vertices": []
+            "vertices": [
+              {
+                "x": 280,
+                "y": 310
+              }
+            ]
           },
           {
             "shape": "flow",
@@ -636,13 +660,23 @@
                 "x": 410,
                 "y": 150
               }
-            ]
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           }
         ]
       }
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 8
+    "threatTop": 9
   }
 }
